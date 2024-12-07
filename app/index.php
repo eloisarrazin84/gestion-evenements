@@ -15,51 +15,82 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/custom.css">
     <title>Événements Outdoor Secours</title>
-    <style>
-        .event-card img {
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px 8px 0 0;
-        }
-    </style>
 </head>
 <body class="bg-light">
-    <header class="bg-primary text-white text-center py-3">
-        <h1>Événements Outdoor Secours</h1>
-    </header>
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <nav class="bg-primary text-white sidebar p-3 vh-100">
+            <h2 class="text-center">Outdoor Secours</h2>
+            <ul class="nav flex-column mt-4">
+                <li class="nav-item">
+                    <a href="index.php" class="nav-link text-white"><i class="bi bi-house-door-fill"></i> Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white"><i class="bi bi-person-lines-fill"></i> Mes événements</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white"><i class="bi bi-gear-fill"></i> Paramètres</a>
+                </li>
+            </ul>
+        </nav>
 
-    <main class="container my-5">
-        <?php if (!empty($events)): ?>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php foreach ($events as $event): ?>
-                    <div class="col">
-                        <div class="card shadow-sm h-100">
-                            <img src="uploads/<?= htmlspecialchars($event['photo'] ?? 'default.jpg') ?>" class="card-img-top" alt="<?= htmlspecialchars($event['name']) ?>">
-                            <div class="card-body">
-                                <h5 class="card-title"><?= htmlspecialchars($event['name']) ?></h5>
-                                <p class="card-text text-muted"><?= htmlspecialchars($event['description']) ?></p>
-                                <ul class="list-unstyled">
-                                    <li><strong>Date :</strong> <?= htmlspecialchars($event['date']) ?></li>
-                                    <li><strong>Lieu :</strong> <?= htmlspecialchars($event['location']) ?></li>
-                                </ul>
-                                <a href="view_event.php?id=<?= $event['id'] ?>" class="btn btn-primary mt-3">Voir les détails</a>
-                            </div>
+        <!-- Main Content -->
+        <div class="container-fluid p-4">
+            <header class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="text-primary">Événements Outdoor Secours</h1>
+                <div>
+                    <button class="btn btn-primary">Créer un événement</button>
+                </div>
+            </header>
+
+            <!-- Content Section -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Modifications en attente</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-person-fill"></i> Manon Raggi <button class="btn btn-success btn-sm ms-2">Valider</button></li>
+                                <li><i class="bi bi-person-fill"></i> Mme Nadège Desmeale <button class="btn btn-success btn-sm ms-2">Valider</button></li>
+                            </ul>
                         </div>
                     </div>
-                <?php endforeach; ?>
-            </div>
-        <?php else: ?>
-            <div class="alert alert-warning text-center">
-                Aucun événement trouvé.
-            </div>
-        <?php endif; ?>
-    </main>
+                </div>
 
-    <footer class="bg-primary text-white text-center py-3">
-        &copy; 2024 Outdoor Secours. Tous droits réservés.
-    </footer>
+                <div class="col-md-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header text-white bg-primary">
+                            <h5 class="card-title">Liste des événements</h5>
+                        </div>
+                        <div class="card-body">
+                            <?php if (!empty($events)): ?>
+                                <div class="row row-cols-1 row-cols-md-2 g-3">
+                                    <?php foreach ($events as $event): ?>
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <img src="uploads/<?= htmlspecialchars($event['photo'] ?? 'default.jpg') ?>" class="card-img-top" alt="<?= htmlspecialchars($event['name']) ?>">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><?= htmlspecialchars($event['name']) ?></h5>
+                                                    <p class="card-text text-muted"><?= htmlspecialchars($event['description']) ?></p>
+                                                    <a href="view_event.php?id=<?= $event['id'] ?>" class="btn btn-outline-primary">Voir les détails</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php else: ?>
+                                <p>Aucun événement trouvé.</p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
 </body>
 </html>
