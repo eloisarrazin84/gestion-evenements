@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
+$host = 'db';
 $dbname = 'gestion_evenements';
 $username = 'event_user';
 $password = 'event_password';
