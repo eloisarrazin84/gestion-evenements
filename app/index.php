@@ -15,19 +15,8 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Événements Outdoor Secours</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .event-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 10px 0;
-            background-color: #f9f9f9;
-        }
-    </style>
 </head>
 <body>
     <h1>Événements Outdoor Secours</h1>
