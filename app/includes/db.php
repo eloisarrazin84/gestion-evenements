@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'gestion_evenements';
-$username = 'root';
-$password = 'rootpassword';
+$username = 'event_user';
+$password = 'event_password';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
