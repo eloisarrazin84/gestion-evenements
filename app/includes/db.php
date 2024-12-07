@@ -2,7 +2,7 @@
 $host = 'localhost';
 $dbname = 'gestion_evenements';
 $username = 'root';
-$password = '';
+$password = 'rootpassword';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
