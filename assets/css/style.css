@@ -1,21 +1,45 @@
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
+    color: #333;
 }
 
 h1 {
     text-align: center;
+    font-size: 2rem;
+    margin: 0;
     padding: 20px;
-    color: #333;
+    color: #007BFF;
 }
 
+/* Header */
+.header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main container */
+.main-container {
+    padding: 20px;
+}
+
+/* Event grid */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Event card */
 .event-card {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    background: #fff;
+    background: white;
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
@@ -28,46 +52,49 @@ h1 {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.event-card img {
+.event-image {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     display: block;
-    border-bottom: 1px solid #ddd;
 }
 
-.event-card h2 {
+.event-content {
+    padding: 15px;
+}
+
+.event-content h2 {
     font-size: 1.5rem;
-    margin: 15px;
-    color: #444;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.event-card p {
-    margin: 15px;
-    color: #555;
+.event-description {
     font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
 }
 
-.details-button {
+.event-button {
     display: inline-block;
-    margin: 15px;
-    padding: 10px 15px;
     background-color: #007BFF;
     color: white;
+    padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 0.9rem;
     transition: background-color 0.3s;
 }
 
-.details-button:hover {
+.event-button:hover {
     background-color: #0056b3;
 }
 
-footer {
+/* Footer */
+.footer {
     text-align: center;
     padding: 10px;
-    background: #333;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    margin-top: 20px;
 }
