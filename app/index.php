@@ -23,10 +23,12 @@ try {
     <?php if (!empty($events)): ?>
         <?php foreach ($events as $event): ?>
             <div class="event-card">
+                <img src="uploads/<?= htmlspecialchars($event['photo'] ?? 'default.jpg') ?>" alt="<?= htmlspecialchars($event['name']) ?>" style="width:100%; height:auto;">
                 <h2><?= htmlspecialchars($event['name']) ?></h2>
                 <p><strong>Description :</strong> <?= htmlspecialchars($event['description']) ?></p>
                 <p><strong>Date :</strong> <?= htmlspecialchars($event['date']) ?></p>
                 <p><strong>Lieu :</strong> <?= htmlspecialchars($event['location']) ?></p>
+                <a href="view_event.php?id=<?= $event['id'] ?>" class="details-button">Voir les détails</a>
             </div>
         <?php endforeach; ?>
     <?php else: ?>
